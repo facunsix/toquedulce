@@ -36,28 +36,49 @@
   transform: translate(-50%, -50%);
   z-index: 20;
   display: flex;
-  gap: 10px; /* Espaciado entre botones */
+  gap: 12px; /* Espaciado entre botones */
   justify-content: center; /* Centra los botones horizontalmente */
 }
 
-/* Estilo personalizado de los botones */
+/* Estilo moderno de los botones */
 .carousel-buttons .btn {
-  background-color: rgba(255, 255, 255, 0.5); /* Fondo transparente */
-  border: 2px solid white; /* Borde blanco */
-  color: black; /* Color del texto */
-  font-size: 1.2rem;
-  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.15); /* Fondo semitransparente */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
+  color: white;
+  font-size: 1rem;
+  padding: 12px 28px;
   text-transform: uppercase;
-  width: auto; /* Permite que los botones ajusten su tamaño automáticamente */
   text-align: center;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
+  border-radius: 30px; /* Bordes redondeados */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque de fondo */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  /* Animación de flotación */
+  animation: float 3s ease-in-out infinite;
 }
 
-/* Efecto al pasar el mouse sobre los botones */
+/* Efecto hover */
 .carousel-buttons .btn:hover {
-  background-color: rgba(58, 49, 49, 0.342); /* Fondo más visible */
-  color: bisque;
-  transform: scale(1.05); /* Efecto de aumento */
+  background-color: rgba(255, 255, 255, 0.3); /* Fondo más visible */
+  color: white;
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Definición de la animación de flotación */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* Sube suavemente */
+  }
+  100% {
+    transform: translateY(0); /* Vuelve a bajar */
+  }
 }
 
 /* Ajustes para pantallas pequeñas */
@@ -67,10 +88,6 @@
     gap: 15px; /* Espaciado entre los botones */
   }
 }
-
-
-
-
 
     /* Animación de desvanecimiento */
 .fade-in {
