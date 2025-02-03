@@ -1,0 +1,314 @@
+    /* Barra de navegación transparente */
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      background-color: rgba(255, 255, 255, 0.404); /* Transparente */
+    }
+    /* Logo más grande */
+    .navbar-brand img {
+      max-height: 100px; /* Tamaño ajustable */
+      width: auto;
+    }
+
+    /* Tamaño uniforme de fuentes en el menú */
+    .navbar-nav .nav-link {
+      font-size: 1.2rem;
+    }
+
+    /* Ajustes del carrusel */
+    header {
+      position: relative;
+    }
+
+    .carousel-inner img {
+      object-fit: cover;
+      height: 100vh; /* Altura del viewport */
+    }
+
+/* Botones en el carrusel */
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  display: flex;
+  gap: 10px; /* Espaciado entre botones */
+  justify-content: center; /* Centra los botones horizontalmente */
+}
+
+/* Estilo personalizado de los botones */
+.carousel-buttons .btn {
+  background-color: rgba(255, 255, 255, 0.5); /* Fondo transparente */
+  border: 2px solid white; /* Borde blanco */
+  color: black; /* Color del texto */
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  width: auto; /* Permite que los botones ajusten su tamaño automáticamente */
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre los botones */
+.carousel-buttons .btn:hover {
+  background-color: rgba(58, 49, 49, 0.342); /* Fondo más visible */
+  color: bisque;
+  transform: scale(1.05); /* Efecto de aumento */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 576px) {
+  .carousel-buttons {
+    flex-direction: column; /* Cambia a columna para apilar los botones */
+    gap: 15px; /* Espaciado entre los botones */
+  }
+}
+
+
+
+
+
+    /* Animación de desvanecimiento */
+.fade-in {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+/* Clase para activar la animación */
+.fade-in.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* Personalización del color de las tarjetas */
+.card {
+  background-color: #f8f9fa; /* Color de fondo (ejemplo: gris claro) */
+  border: 1px solid #ddd;    /* Borde suave */
+}
+
+.card-title {
+  color: #6c757d; /* Color del título (ejemplo: gris oscuro) */
+}
+
+.card-text {
+  color: #343a40; /* Color del texto (ejemplo: gris más oscuro) */
+}
+/* Estilo del botón flotante */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px; /* Distancia desde el borde inferior */
+  right: 20px;  /* Distancia desde el borde derecho */
+  z-index: 100; /* Asegura que esté encima de otros elementos */
+  animation: float 2s infinite ease-in-out; /* Animación de flotación */
+}
+
+/* Tamaño del ícono */
+.whatsapp-icon {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.whatsapp-icon:hover {
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+/* Animación de flotación */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+/* Galería de imágenes */
+.imagen-item {
+  position: relative;
+  cursor: pointer;
+  margin: 5px; /* Espaciado entre las imágenes */
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.781); /* Sombra para darle efecto */
+}
+
+/* Imágenes de la galería */
+.imagen-galeria {
+  width: 160px; /* Ancho fijo para todas las imágenes */
+  height: 150px; /* Alto fijo para todas las imágenes */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efectos de hover */
+}
+
+/* Efecto hover en las imágenes de la galería */
+.imagen-galeria:hover {
+  transform: scale(1.1); /* Aumenta el tamaño al pasar el cursor */
+  box-shadow: 0 20px 20px  rgba(211, 73, 192, 0.555); /* Añadir sombra */
+}
+
+
+
+/* Estilo para pantallas pequeñas en la galería */
+@media (max-width: 768px) {
+  .imagen-galeria {
+    aspect-ratio: 1; /* Mantiene la relación cuadrada en pantallas pequeñas */
+  }
+
+  /* Diseño en 2 columnas para pantallas pequeñas */
+  .galeria-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 20px; /* Espacio entre las imágenes */
+  }
+
+  .imagen-item {
+    margin: 0; /* Eliminar margen extra en las imágenes */
+  }
+}
+
+/* Modal */
+.modal-imagen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.959);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.contenido-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d89f9f;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 90%;
+  max-height: 80%;
+  padding: 10px;
+  flex-wrap: wrap;  /* Para que los elementos no se desborden en pantallas pequeñas */
+  margin-bottom: 20px; /* Espacio inferior en el modal */
+}
+
+#imagenModal {
+  width: auto; /* El ancho se ajustará automáticamente */
+  height: auto; /* El alto se ajustará automáticamente */
+  max-width: 30%; /* Limita el tamaño al 90% del ancho de la pantalla */
+  max-height: 100%; /* Limita el tamaño al 90% de la altura de la pantalla */
+}
+
+/* Descripción del modal */
+.descripcion-modal {
+  padding: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alineación a la izquierda */
+  justify-content: center;
+  max-width: 30%; /* Ajusta el tamaño de la descripción */
+}
+
+#descripcionModal h3 {
+  color: #333;
+}
+
+#descripcionModal p {
+  color: #666;
+}
+
+/* Título de la imagen en el modal */
+#tituloModal {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Botón de cerrar */
+.cerrar-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 3rem;
+  color: #cf3030;
+  cursor: pointer;
+}
+
+.cerrar-btn:hover {
+  color: #f44336;
+}
+
+/* Estilo responsive para el modal */
+@media (max-width: 768px) {
+  .contenido-modal {
+    flex-direction: column;
+    max-width: 70%; /* Ajusta el tamaño del modal en pantallas pequeñas */
+  }
+
+  .descripcion-modal {
+    padding: 10px;
+    max-width: 100%; /* La descripción ocupará todo el ancho disponible */
+    margin-top: 10px;
+    font-size: 1rem; /* Reduce el tamaño del texto en pantallas pequeñas */
+  }
+
+  /* La imagen y la descripción se apilan en pantallas pequeñas */
+  .contenido-modal {
+    flex-direction: column;
+  }
+  .cerrar-btn {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    font-size: 2rem;
+    color: #cf3030;
+    cursor: pointer;
+  }
+  
+  .cerrar-btn:hover {
+    color: #f44336;
+  }
+  
+  #imagenModal {
+    max-width: 100%; /* Ocupa todo el ancho disponible */
+    max-height: 70vh; /* Ajusta la altura para evitar desbordes */
+  }
+
+  .descripcion-modal {
+    font-size: 1rem; /* Reduce el tamaño del texto */
+    margin-top: 10px; /* Espacio entre la imagen y la descripción */
+  }
+
+
+}
+
+/* Estilo para pantallas grandes */
+@media (min-width: 768px) {
+  .contenedor-imagen-modal {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .descripcion-modal {
+    padding-left: 70px;
+    max-width: 40%;
+    text-align: left;
+  }
+}
+
+.modal-imagen.show {
+  display: flex;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}

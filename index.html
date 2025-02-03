@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesas Dulces</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="script.js">
+
+
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="Logo1.png" alt="Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#galeria-imagenes">Galeria</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contáctanos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carrusel -->
+  <header>
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/1.jpeg" class="d-block w-100" alt="Mesa dulce 1">
+        </div>
+        <div class="carousel-item">
+          <img src="img/2.jpeg" class="d-block w-100" alt="Mesa dulce 2">
+        </div>
+        <div class="carousel-item">
+          <img src="img/3.png" class="d-block w-100" alt="Mesa dulce 3">
+        </div>
+        <div class="carousel-item">
+          <img src="img/4.jpeg" class="d-block w-100" alt="Mesa dulce 3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+    <div class="carousel-buttons">
+      <a href="#servicio" class="btn btn-primary">Servicio</a>
+      <a href="#contacto" class="btn btn-secondary">Contáctanos</a>
+    </div>
+  </header>
+<!-- Sección de Servicios -->
+<section id="servicio" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Nuestros Servicios</h2>
+    <div class="row g-4">
+      <!-- Tarjeta 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 fade-in">
+          <img src="img/servicio1.jpeg" class="card-img-top" alt="En qué consiste">
+          <div class="card-body">
+            <h5 class="card-title text-center">¿En qué consiste?</h5>
+            <p class="card-text">
+              Creamos mesas dulces personalizadas para todo tipo de eventos: 15 años, cumpleaños, bodas, recepciones y más. 
+              Nos encargamos de cada detalle para que tu celebración sea única.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Tarjeta 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 fade-in">
+          <img src="img/servicio2 (2).jpeg" class="card-img-top" alt="Qué ofrecemos">
+          <div class="card-body">
+            <h5 class="card-title text-center">¿Qué ofrecemos?</h5>
+            <p class="card-text">
+              Ofrecemos mesas temáticas con variedad de dulces, decoración exclusiva y atención a tus requerimientos 
+              para que sea justo como lo imaginas.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Tarjeta 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 fade-in">
+          <img src="img/servicio3.png" class="card-img-top" alt="Métodos de pago">
+          <div class="card-body">
+            <h5 class="card-title text-center">Métodos de pago</h5>
+            <p class="card-text">
+              -Pago en efectivo<br>
+              -Mercado pago<br>
+              -Transferencia
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Galería -->
+<section id="galeria-imagenes" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Galería de Imágenes</h2>
+    <div class="row galeria-row">
+      <!-- Imagen 1 -->
+      <div class="col-md-2">
+        <div class="imagen-item">
+          <img src="img/galeria1.jpeg" alt="Imagen 1" id="imagen1" class="imagen-galeria">
+        </div>
+      </div>
+      <!-- Imagen 2 -->
+      <div class="col-md-2">
+        <div class="imagen-item">
+          <img src="img/galeria7.jpeg" alt="Imagen 2" id="imagen2" class="imagen-galeria">
+        </div>
+      </div>
+      <!-- Imagen 3 -->
+      <div class="col-md-2">
+        <div class="imagen-item">
+          <img src="img/galeria3.jpeg" alt="Imagen 3" id="imagen3" class="imagen-galeria">
+        </div>
+      </div>
+      <!-- Imagen 4 -->
+      <div class="col-md-2">
+        <div class="imagen-item">
+          <img src="img/galeria12.jpeg" alt="Imagen 4" id="imagen4" class="imagen-galeria">
+        </div>
+      </div>
+      <!-- Imagen 5 -->
+      <div class="col-md-2">
+        <div class="imagen-item">
+          <img src="img/galeria5.jpeg" alt="Imagen 5" id="imagen5" class="imagen-galeria">
+        </div>
+      </div>
+      <!-- Imagen 6 -->
+      <div class="col-md-2">
+        <div class="imagen-item">
+          <img src="img/7.jpeg" alt="Imagen 6" id="imagen6" class="imagen-galeria">
+        </div>
+      </div>
+      <!-- Imagen 7 -->
+      <div class="col-md-2">
+        <div class="imagen-item">
+          <img src="img/galeria9.jpeg" alt="Imagen 7" id="imagen7" class="imagen-galeria">
+        </div>
+      </div>
+      <!-- Imagen 8 -->
+      <div class="col-md-2">
+        <div class="imagen-item">
+          <img src="img/galeria10.jpeg" alt="Imagen 8" id="imagen8" class="imagen-galeria">
+        </div>
+      </div>
+      <!-- Imagen 8 -->
+      <div class="col-md-2">
+        <div class="imagen-item">
+          <img src="img/galeria10.jpeg" alt="Imagen 8" id="imagen8" class="imagen-galeria">
+        </div>
+      </div>
+      <!-- Imagen 8 -->
+      <div class="col-md-2">
+        <div class="imagen-item">
+          <img src="img/galeria10.jpeg" alt="Imagen 8" id="imagen8" class="imagen-galeria">
+        </div>
+      </div>
+      <!-- Imagen 8 -->
+      <div class="col-md-2">
+        <div class="imagen-item">
+          <img src="img/galeria10.jpeg" alt="Imagen 8" id="imagen8" class="imagen-galeria">
+        </div>
+      </div>
+      <!-- Imagen 8 -->
+      <div class="col-md-2">
+        <div class="imagen-item">
+          <img src="img/galeria10.jpeg" alt="Imagen 8" id="imagen8" class="imagen-galeria">
+        </div>
+      </div>
+      <!-- Imagen 8 -->
+      <div class="col-md-2">
+        <div class="imagen-item">
+          <img src="img/galeria10.jpeg" alt="Imagen 8" id="imagen8" class="imagen-galeria">
+        </div>
+      </div>
+      <!-- Imagen 8 -->
+      <div class="col-md-2">
+        <div class="imagen-item">
+          <img src="img/galeria10.jpeg" alt="Imagen 8" id="imagen8" class="imagen-galeria">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Modal para ver la imagen grande -->
+<div id="modal-imagen" class="modal-imagen">
+  <div class="contenido-modal">
+    <span class="cerrar-btn">&times;</span>
+    <div class="contenedor-imagen-modal">
+      <img id="imagenModal" src="" alt="Imagen Grande">
+      <div id="descripcionModal" class="descripcion-modal">
+        <h3 id="tituloModal"></h3>  <!-- Título de la imagen -->
+        <p></p>  <!-- Descripción de la imagen -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  // Observador para detectar cuándo las tarjetas entran en pantalla
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show"); // Activa la animación
+        }
+      });
+    });
+
+    // Selecciona todas las tarjetas
+    const cards = document.querySelectorAll(".fade-in");
+    cards.forEach((card) => observer.observe(card));
+  });
+
+
+// Función para abrir el modal y cargar la imagen correspondiente
+const imagenesGaleria = document.querySelectorAll(".imagen-galeria");
+const modalImagen = document.getElementById("modal-imagen");
+const imagenModal = document.getElementById("imagenModal");
+const descripcionModal = document.getElementById("descripcionModal");
+const tituloModal = document.getElementById("tituloModal");  // Agregamos el título
+const cerrarModalBtn = document.querySelector(".cerrar-btn");
+
+// Descripciones de las imágenes (puedes personalizar cada una)
+const descripciones = {
+  imagen1: "Esta es la descripción de la Imagen 1.",
+  imagen2: "Esta es la descripción de la Imagen 2.",
+  imagen3: "Esta es la descripción de la Imagen 3.",
+  imagen4: "Esta es la descripción de la Imagen 4.",
+  imagen5: "Esta es la descripción de la Imagen 5.",
+  imagen6: "Esta es la descripción de la Imagen 6."
+};
+
+// Títulos de las imágenes (personalizados para cada imagen)
+const titulos = {
+  imagen1: "Título de la Imagen 1",
+  imagen2: "Título de la Imagen 2",
+  imagen3: "Título de la Imagen 3",
+  imagen4: "Título de la Imagen 4",
+  imagen5: "Título de la Imagen 5",
+  imagen6: "Título de la Imagen 6"
+};
+
+imagenesGaleria.forEach(imagen => {
+  imagen.addEventListener("click", function() {
+    const imagenId = this.id;
+    const imagenSrc = this.src;
+    const descripcion = descripciones[imagenId];
+    const titulo = titulos[imagenId];
+
+    imagenModal.src = imagenSrc;
+    descripcionModal.innerHTML = `<h3>${titulo}</h3><p>${descripcion}</p>`;
+    tituloModal.innerHTML = titulo;
+
+    // Mostrar el modal con transición
+    modalImagen.classList.add("show");
+    imagenModal.style.transform = "scale(1)"; // Reinicia el efecto de transformación
+  });
+});
+
+// Función para cerrar el modal
+cerrarModalBtn.addEventListener("click", function() {
+  modalImagen.classList.remove("show");
+});
+
+// Cerrar el modal si se hace clic en el fondo
+modalImagen.addEventListener("click", function(e) {
+  if (e.target === modalImagen) {
+    modalImagen.classList.remove("show");
+  }
+});
+
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <a href="https://wa.me/3764821675" target="_blank" class="whatsapp-float">
+    <img src="img/wasap.png" alt="WhatsApp" class="whatsapp-icon">
+  </a>
+  
+</body>
+</html>
