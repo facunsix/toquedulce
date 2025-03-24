@@ -1,44 +1,239 @@
-// Función para abrir el modal y cargar la imagen correspondiente
-const imagenesGaleria = document.querySelectorAll(".imagen-galeria");
-const modalImagen = document.getElementById("modal-imagen");
-const imagenModal = document.getElementById("imagenModal");
-const descripcionModal = document.getElementById("descripcionModal");
-const cerrarModalBtn = document.querySelector(".cerrar-btn");
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Configuración de la galería
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const modal = document.getElementById('gallery-modal');
+    const modalImage = document.getElementById('modal-image');
+    const modalTitle = document.getElementById('modal-title');
+    const modalCategory = document.getElementById('modal-category');
+    const modalDescription = document.getElementById('modal-description');
+    const closeModal = document.querySelector('.close-modal');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    
+    // Datos de las imágenes (puedes expandir esto)
+    const galleryData = [
+      {
+        src: 'img/galeria1.jpeg',
+        title: 'Torta de Cereza',
+        category: 'tortas',
+        description: 'Sumérgete en la indulgencia de nuestros Muffins Delicia de Cereza. Cada bocado es una explosión de sabor: la suavidad de la crema batida se funde con la frescura de la cereza, todo sobre un muffin esponjoso y dorado a la perfección.'
+      },
+      {
+        src: 'imagenes/minibrawnis.jfif',
+        title: 'Mini Brownies',
+        category: 'muffins',
+        description: 'Exquisitos brownies en formato mini, con un intenso sabor a chocolate y textura suave en el centro con bordes ligeramente crujientes. Perfectos para eventos y regalos.'
+      },
+      {
+        src: 'imagenes/minilemonpie.jfif',
+        title: 'Mini Lemon Pie',
+        category: 'tortas',
+        description: 'Nuestra versión mini del clásico lemon pie, con una base crujiente, cremosa y suave crema de limón con el balance perfecto entre dulce y ácido, coronado con merengue italiano.'
+      },
+      {
+        src: 'imagenes/minirogel.jfif',
+        title: 'Mini Rogel',
+        category: 'tortas',
+        description: 'El clásico argentino en versión mini. Capas de masa crocante intercaladas con dulce de leche repostero y cubierto con un merengue italiano que se derrite en tu boca.'
+      },
+      {
+        src: 'imagenes/minisbrawnisvariedad.jfif',
+        title: 'Brownies Variados',
+        category: 'muffins',
+        description: 'Variedad de brownies con diferentes toppings: nueces, chips de chocolate, crema de maní y frutos rojos. Cada uno es una experiencia única de sabor.'
+      },
+      {
+        src: 'imagenes/minitartafloras.jfif',
+        title: 'Mini Tartas Floral',
+        category: 'tortas',
+        description: 'Delicadas tartas individuales con diseños florales, combinando sabores frutales con cremas suaves y bases de masa quebrada casera.'
+      },
+      {
+        src: 'imagenes/minitortitasfrutales.jfif',
+        title: 'Mini Tortitas Frutales',
+        category: 'tortas',
+        description: 'Pequeñas tortas decoradas con frutas frescas de estación, combinando la frescura de las frutas con bizcochos esponjosos y cremas ligeras.'
+      },
+      {
+        src: 'imagenes/paletasdechocolate.jfif',
+        title: 'Paletas de Chocolate',
+        category: 'bombones',
+        description: 'Paletas artesanales de chocolate semi-amargo, con decoraciones personalizadas y rellenos sorpresa. Perfectas para eventos temáticos.'
+      }
+    ];
 
-// Descripciones de las imágenes (puedes personalizar cada una)
-const descripciones = {
-  imagen1: "Esta es la descripción de la Imagen 1.",
-  imagen2: "Esta es la descripción de la Imagen 2.",
-  imagen3: "Esta es la descripción de la Imagen 3.",
-  imagen4: "Esta es la descripción de la Imagen 4.",
-  imagen5: "Esta es la descripción de la Imagen 5.",
-  imagen6: "Esta es la descripción de la Imagen 6."
-};
+    function shareOnInstagram() {
+        const text = `Mira este delicioso ${galleryData[currentIndex].title} de Toque Dulce!`;
+        const shareText = `${text}\nhttps://facunsix.github.io/toquedulce/`;
+        const imageUrl = "https://facunsix.github.io/toquedulce/img/1.jpeg"; // Imagen que quieres compartir
+    
+        navigator.clipboard.writeText(shareText).then(() => {
+            Swal.fire({
+                title: "Texto copiado 📋",
+                text: "Abre Instagram y pégalo en un chat.",
+                imageUrl: imageUrl,  // La imagen aparece arriba
+                imageWidth: 200,
+                imageHeight: 150,
+                imageAlt: "Imagen de Toque Dulce",
+                icon: "info",
+                showCancelButton: true,
+                confirmButtonText: "Abrir Instagram",
+                cancelButtonText: "Cerrar",
+                customClass: {
+                    popup: "custom-popup",
+                    title: "custom-title",
+                    confirmButton: "custom-confirm",
+                    cancelButton: "custom-cancel"
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.open('https://www.instagram.com/direct/new/', '_blank');
+                }
+            });
+        });
+    }
+    
+    function shareOnWhatsApp() {
+        const text = `Mira este delicioso ${galleryData[currentIndex].title} de Toque Dulce!\nhttps://facunsix.github.io/toquedulce/`;
+        const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+    
+        window.open(url, '_blank', 'width=600,height=400');
+    }
+    
+    
+    
+    
+  // Asignar eventos a los botones de compartir
+  document.querySelector('.social-btn.instagram').addEventListener('click', shareOnInstagram);
+  document.querySelector('.social-btn.whatsapp').addEventListener('click', shareOnWhatsApp);
 
-// Función para abrir el modal
-imagenesGaleria.forEach(imagen => {
-  imagen.addEventListener("click", function() {
-    const imagenId = this.id;  // Obtener el ID de la imagen clickeada
-    const imagenSrc = this.src;
-    const descripcion = descripciones[imagenId];  // Obtener la descripción según el ID
-
-    // Cambiar la imagen y la descripción en el modal
-    imagenModal.src = imagenSrc;
-    descripcionModal.innerHTML = `<h3>Descripción de ${imagenId}</h3><p>${descripcion}</p>`;
-
-    // Mostrar el modal con animación
-    modalImagen.classList.add("show");
+    
+    let currentIndex = 0;
+    
+    // Filtrado de la galería
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Remover clase active de todos los botones
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Agregar clase active al botón clickeado
+        this.classList.add('active');
+        
+        const filterValue = this.getAttribute('data-filter');
+        
+        galleryItems.forEach(item => {
+          const itemCategory = item.getAttribute('data-category');
+          
+          if (filterValue === 'all' || itemCategory === filterValue) {
+            item.style.display = 'block';
+            item.classList.add('fade-in-item');
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Abrir modal al hacer clic en una imagen
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', function() {
+        currentIndex = index;
+        updateModal(currentIndex);
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Deshabilitar scroll
+      });
+    });
+    
+    // Función para actualizar el modal
+    function updateModal(index) {
+      const itemData = galleryData[index];
+      modalImage.src = itemData.src;
+      modalTitle.textContent = itemData.title;
+      modalCategory.textContent = itemData.category;
+      modalDescription.textContent = itemData.description;
+      
+      // Cambiar color según categoría
+      switch(itemData.category) {
+        case 'tortas':
+          modalCategory.style.backgroundColor = '#e50914';
+          break;
+        case 'bombones':
+          modalCategory.style.backgroundColor = '#8B4513';
+          break;
+        case 'muffins':
+          modalCategory.style.backgroundColor = '#D2691E';
+          break;
+        case 'fiestas':
+          modalCategory.style.backgroundColor = '#FF1493';
+          break;
+        default:
+          modalCategory.style.backgroundColor = '#e50914';
+      }
+    }
+    
+    // Navegación entre imágenes
+    prevBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + galleryData.length) % galleryData.length;
+      updateModal(currentIndex);
+    });
+    
+    nextBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % galleryData.length;
+      updateModal(currentIndex);
+    });
+    
+    // Cerrar modal
+    closeModal.addEventListener('click', function() {
+      modal.classList.remove('active');
+      document.body.style.overflow = ''; // Habilitar scroll
+    });
+    
+    // Cerrar al hacer clic fuera del modal
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Habilitar scroll
+      }
+    });
+    
+    // Animación de aparición para los elementos de la galería
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+  
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+  
+    const animatedItems = document.querySelectorAll(".fade-in, .fade-in-item");
+    animatedItems.forEach(item => observer.observe(item));
+    
+    // Efecto hover para las tarjetas
+    galleryItems.forEach(item => {
+      item.addEventListener('mousemove', function(e) {
+        const x = e.clientX - this.getBoundingClientRect().left;
+        const y = e.clientY - this.getBoundingClientRect().top;
+        
+        const centerX = this.offsetWidth / 2;
+        const centerY = this.offsetHeight / 2;
+        
+        const angleX = (y - centerY) / 10;
+        const angleY = (centerX - x) / 10;
+        
+        this.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+      });
+      
+      item.addEventListener('mouseleave', function() {
+        this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+      });
+    });
   });
-});
-
-// Función para cerrar el modal
-cerrarModalBtn.addEventListener("click", function() {
-  modalImagen.classList.remove("show");
-});
-
-// Cerrar el modal si se hace clic en el fondo
-modalImagen.addEventListener("click", function(e) {
-  if (e.target === modalImagen) {
-    modalImagen.classList.remove("show");
-  }
-});
