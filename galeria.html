@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería - Mesas Dulces</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="Logo1.png" alt="Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="galeria.html">Galería</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <!-- Sección de Galería Moderna -->
+  <section id="galeria" class="gallery-section">
+    <div class="gallery-container">
+      <div class="gallery-header">
+        <h2 class="gallery-title">Nuestras Creaciones</h2>
+        <p class="gallery-subtitle">Descubre la dulce magia de nuestros postres</p>
+        <div class="gallery-divider"></div>
+      </div>
+      
+      <!-- Filtros -->
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">Todo</button>
+        <button class="filter-btn" data-filter="bombones">Bombones</button>
+        <button class="filter-btn" data-filter="tortas">Tortas</button>
+        <button class="filter-btn" data-filter="fiestas">Fiestas</button>
+        <button class="filter-btn" data-filter="muffins">Muffins</button>
+      </div>
+      
+      <!-- Grid de Galería -->
+      <div class="gallery-grid">
+        <!-- Item 1 -->
+        <div class="gallery-item" data-category="muffins">
+          <div class="gallery-item-inner">
+            <img src="img/galeria1.jpeg" alt="Torta de Cereza" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <h3>Muffins de Cereza</h3>
+                <p>Deliciosa combinación de sabores</p>
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Item 2 -->
+        <div class="gallery-item" data-category="muffins">
+          <div class="gallery-item-inner">
+            <img src="imagenes/minibrawnis.jfif" alt="Mini Brownies" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <h3>Mini Brownies</h3>
+                <p>Chocolate intenso en pequeño formato</p>
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Item 3 -->
+        <div class="gallery-item" data-category="tortas">
+          <div class="gallery-item-inner">
+            <img src="imagenes/minilemonpie.jfif" alt="Mini Lemon Pie" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <h3>Mini Lemon Pie</h3>
+                <p>Acidez perfectamente balanceada</p>
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Item 4-->
+        <div class="gallery-item" data-category="tortas">
+          <div class="gallery-item-inner">
+            <img src="imagenes/minirogel.jfif" alt="Mini Lemon Pie" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <h3>Mini Rogel</h3>
+                <p>Capas crujientes y dulce sedoso</p>
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+          </div>
+        </div>      
+
+        <!-- Item 5-->
+        <div class="gallery-item" data-category="muffins">
+          <div class="gallery-item-inner">
+            <img src="imagenes/minisbrawnisvariedad.jfif" alt="brawnis variados" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <h3>Brownies Variados</h3>
+                <p>Explocion de gustos</p>
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <!-- Item 6-->
+         <div class="gallery-item" data-category="tortas">
+          <div class="gallery-item-inner">
+            <img src="imagenes/minitartafloras.jfif" alt="Mini Lemon Pie" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <h3>Mini Tartafloras</h3>
+                <p>Nada mas rico, que una buena pastaflora</p>
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+          </div>
+        </div>  
+
+         <!-- Item 7-->
+         <div class="gallery-item" data-category="tortas">
+          <div class="gallery-item-inner">
+            <img src="imagenes/minitortitasfrutales.jfif" alt="Mini tortitas frutales" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <h3>Mini Tortitas Frutales</h3>
+                <p>Combinacion de frutas en tu boca</p>
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+          </div>
+        </div>  
+        
+             <!-- Item 9-->
+             <div class="gallery-item" data-category="bombones">
+              <div class="gallery-item-inner">
+                <img src="imagenes/paletasdechocolate.jfif" alt="paletas de chocolate" class="gallery-image">
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <h3>Paletas de Chocolate</h3>
+                    <p>Las mejores paletas chocolatosas</p>
+                    <i class="fas fa-search-plus"></i>
+                  </div>
+                </div>
+              </div>
+            </div> 
+
+          <!-- Item 10-->
+<div class="gallery-item" data-category="fiestas">
+  <div class="gallery-item-inner">
+    <img src="img/1.jpeg" alt="fiestas" class="gallery-image">
+    <div class="gallery-overlay">
+      <div class="overlay-content">
+        <h3>Mesa dulce 15 años</h3>
+        <p>Exquisita selección de postres y delicias para celebrar este momento especial</p>
+        <i class="fas fa-search-plus"></i>
+      </div>
+    </div>
+  </div>
+</div> 
+
+   <!-- Item 11-->
+<div class="gallery-item" data-category="fiestas">
+  <div class="gallery-item-inner">
+    <img src="img/servicio2 (2).jpeg" alt="Macarons personalizados" class="gallery-image">
+    <div class="gallery-overlay">
+      <div class="overlay-content">
+        <h3>Macarons Elegantes</h3>
+        <p>Delicados macarons verdes y blancos rellenos de crema de maní y dulce de leche</p>
+        <i class="fas fa-search-plus"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Item 12-->
+<div class="gallery-item" data-category="fiestas">
+  <div class="gallery-item-inner">
+    <img src="img/4.jpeg" alt="Decoración frutal para eventos" class="gallery-image">
+    <div class="gallery-overlay">
+      <div class="overlay-content">
+        <h3>Arreglo Frutal Elegante</h3>
+        <p>Fresca combinación de piña, kiwi, frutillas y uvas</p>
+        <i class="fas fa-search-plus"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Item 13-->
+<div class="gallery-item" data-category="bombones">
+  <div class="gallery-item-inner">
+    <img src="img/2.jpeg" alt="Oreos bañadas en chocolate" class="gallery-image">
+    <div class="gallery-overlay">
+      <div class="overlay-content">
+        <h3>Oreos Elegantes</h3>
+        <p>Galletitas bañadas en chocolate blanco y negro con decoración personalizada</p>
+        <i class="fas fa-search-plus"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Item 14-->
+<div class="gallery-item" data-category="bombones">
+  <div class="gallery-item-inner">
+    <img src="img/galeria3.jpeg" alt="Bombones artesanales premium" class="gallery-image">
+    <div class="gallery-overlay">
+      <div class="overlay-content">
+        <h3>Bombones Artesanales</h3>
+        <p>Exquisitos bombones rellenos de dulce de leche y Nutela</p>
+        <i class="fas fa-search-plus"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Item 14-->
+<div class="gallery-item" data-category="bombones">
+  <div class="gallery-item-inner">
+    <img src="img/galeria3.jpeg" alt="Bombones artesanales premium" class="gallery-image">
+    <div class="gallery-overlay">
+      <div class="overlay-content">
+        <h3>Bombones Artesanales</h3>
+        <p>Exquisitos bombones rellenos de dulce de leche y Nutela</p>
+        <i class="fas fa-search-plus"></i>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Galería Moderno -->
+  <div id="gallery-modal" class="gallery-modal">
+    <div class="modal-container">
+      <span class="close-modal">&times;</span>
+      <div class="modal-content">
+        <div class="modal-image-container">
+          <img id="modal-image" src="" alt="" class="modal-image">
+          <div class="image-nav">
+            <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+        <div class="modal-info">
+          <h2 id="modal-title"></h2>
+          <div class="modal-meta">
+            <span id="modal-category" class="category-tag"></span>
+            <span class="modal-date"><i class="far fa-calendar-alt"></i> Hoy</span>
+          </div>
+          <p id="modal-description"></p>
+          <div class="modal-social">
+            <button class="social-btn instagram">
+              <i class="fab fa-instagram"></i> Instagram
+            </button>
+            <button class="social-btn whatsapp">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <footer>
+    <ul class="icons">
+      <li><a  href="mailto:toquedulceee@gmail.com"><img src="img/gmail.png" alt=""></a></li>
+      <li><a  href="#"><img src="img/logotipo-de-instagram.png" alt=""></a></li>
+    </ul>
+    <ul class="menu">
+        <li><a href="index.html">INICIO</a></li>
+      <li><a href="galeria.html">GALERIA</a></li>
+    </ul>
+    <p>Gracias por visitarnos. ¡Síguenos en redes para más novedades! 💖</p>
+    <p>&copy; 2025 Toque Dulce. Todos los derechos reservados.</p>
+    <p>Pagina hecha por <a class="facu" href="https://www.instagram.com/facuesteche_/">Facundo Esteche</a></p>
+  
+  </footer>
+  
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
